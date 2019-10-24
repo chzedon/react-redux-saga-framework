@@ -1,0 +1,1 @@
+export const HANDLE_COMMON = "HANDLE_COMMON"
