@@ -2,7 +2,9 @@ import {
   HANDLE_COMMON
 } from 'actionType'
 
-const init = {}
+const init = {
+  test: "hello world"
+}
 
 export default (state = init, action) => {
   switch (action.type) {

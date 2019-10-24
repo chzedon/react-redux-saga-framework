@@ -1,12 +1,18 @@
-import * as saga from 'redux-saga/effects';
+import {
+  spawn,
+  all,
+  call
+} from 'redux-saga/effects';
+import commonSaga from "./common.js";
+
 
 export default function* rootSaga() {
-  const sagas = [];
-  yield saga.all(sagas.map(saga =>
-    saga.spawn(function* () {
+  const sagas = [commonSaga];
+  yield all(sagas.map(saga =>
+    spawn(function* () {
       while (true) {
         try {
-          yield saga.call(saga);
+          yield call(saga);
           break;
         } catch (e) {
 
